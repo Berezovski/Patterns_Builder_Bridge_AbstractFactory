@@ -1,0 +1,289 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Программная инженерия ЛР1</name>
+    </assembly>
+    <members>
+        <member name="T:Программная_инженерия_ЛР1.Dish">
+            <summary>
+            Класс всей посуды. Паттерн "мост" реализован
+            переменную _dishdata со структурой DishCharacteristics
+            </summary>
+        </member>
+        <member name="M:Программная_инженерия_ЛР1.Dish.#ctor(Программная_инженерия_ЛР1.DishCharacteristics,System.Int32,System.Int32)">
+            <summary>
+            Задаёт характеристики, айди выпуска, количество товара
+            </summary>
+            <param name="dishData"> характеристики </param>
+            <param name="id"> айди выпуска </param>
+            <param name="count"> количество товара </param>
+        </member>
+        <member name="M:Программная_инженерия_ЛР1.Dish.GetDishCharacteristics">
+            <summary>
+            Посмотреть характеристики
+            </summary>
+            <returns> Характеристики </returns>
+        </member>
+        <member name="M:Программная_инженерия_ЛР1.Dish.GetDishCount">
+            <summary>
+            Посмотреть количетсво товара
+            </summary>
+            <returns> количетсво товара </returns>
+        </member>
+        <member name="M:Программная_инженерия_ЛР1.Dish.GetDishId">
+            <summary>
+            Посмотреть айди выпуска
+            </summary>
+            <returns> айди выпуска </returns>
+        </member>
+        <member name="T:Программная_инженерия_ЛР1.DishBuilder">
+            <summary>
+            Строитель посуды, над которым будет стоять директор,
+            тут можно создать свою посуду со своими характеристиками.
+            Реализован паттерн "мост" через переменную _dishData.
+            Реализован паттерн "строитель".
+            </summary>
+        </member>
+        <member name="M:Программная_инженерия_ЛР1.DishBuilder.#ctor">
+            <summary>
+            Задаёт начальные характеристики (по нулям)
+            </summary>
+        </member>
+        <member name="M:Программная_инженерия_ЛР1.DishBuilder.setCapacity(System.Int32)">
+            <summary>
+            Строитель создаёт вместимость
+            </summary>
+            <param name="capacity"> вместимость </param>
+        </member>
+        <member name="M:Программная_инженерия_ЛР1.DishBuilder.setColor(System.String)">
+            <summary>
+            Строитель создаёт цвет
+            </summary>
+            <param name="color"> цвет </param>
+        </member>
+        <member name="M:Программная_инженерия_ЛР1.DishBuilder.setMaterial(System.String)">
+            <summary>
+            Строитель создаёт материал
+            </summary>
+            <param name="material"> материал </param>
+        </member>
+        <member name="M:Программная_инженерия_ЛР1.DishBuilder.setPrice(System.Int32)">
+            <summary>
+            Строитель задаёт цену
+            </summary>
+            <param name="price"> цена </param>
+        </member>
+        <member name="M:Программная_инженерия_ЛР1.DishBuilder.GetDishCharacteristics">
+            <summary>
+            Возвращаёт заданные характеристики
+            </summary>
+            <returns> заданные характеристики </returns>
+        </member>
+        <member name="T:Программная_инженерия_ЛР1.DishBuilderDirector">
+            <summary>
+            Директор строителя, тут уже готовые продукты
+            последовательно построенные через паттерн "строитель".
+            Директор также следит за id выпуска продуктов.
+            </summary>
+        </member>
+        <member name="M:Программная_инженерия_ЛР1.DishBuilderDirector.#ctor">
+            <summary>
+            Задаём начальный айди для партии продуктов
+            </summary>
+        </member>
+        <member name="M:Программная_инженерия_ЛР1.DishBuilderDirector.CreateWhiteSmallCeramicCup(System.Int32)">
+            <summary>
+            Создаёт маленькие керамические чашки
+            </summary>
+            <param name="count"> Количество посуды </param>
+            <returns> Посуду </returns>
+        </member>
+        <member name="M:Программная_инженерия_ЛР1.DishBuilderDirector.CreateWhiteBigAluminumPot(System.Int32)">
+            <summary>
+            Создаёт алюминивые кастрюли
+            </summary>
+            <param name="count"> Количество посуды </param>
+            <returns> Посуду </returns>
+        </member>
+        <member name="M:Программная_инженерия_ЛР1.DishBuilderDirector.CreateBlackBigIronPan(System.Int32)">
+            <summary>
+            Создаёт железные сковородки
+            </summary>
+            <param name="count"> Количество посуды </param>
+            <returns> Посуду </returns>
+        </member>
+        <member name="M:Программная_инженерия_ЛР1.DishBuilderDirector.CreateBlackSmallGlassPlate(System.Int32)">
+            <summary>
+            Создаёт стеклянные тарелки
+            </summary>
+            <param name="count"> Количество посуды </param>
+            <returns> Посуду </returns>
+        </member>
+        <member name="M:Программная_инженерия_ЛР1.DishBuilderDirector.CreateGreenSmallPlasticGlass(System.Int32)">
+            <summary>
+            Создаёт пластиковые бокалы
+            </summary>
+            <param name="count"> Количество посуды </param>
+            <returns> Посуду </returns>
+        </member>
+        <member name="T:Программная_инженерия_ЛР1.Cup">
+            <summary>
+            Чашка, унаследована от Посуды.
+            Может быть с ручкой или без.
+            </summary>
+        </member>
+        <member name="P:Программная_инженерия_ЛР1.Cup.HaveHandle">
+            <summary>
+            Чашка с ручкой ли?
+            </summary>
+        </member>
+        <member name="M:Программная_инженерия_ЛР1.Cup.#ctor(Программная_инженерия_ЛР1.DishCharacteristics,System.Int32,System.Int32)">
+            <summary>
+            Конструктор взятый с базового класса.
+            По умолчанию Чашка с ручкой.
+            </summary>
+            <param name="dishData"> Характеристики посуды </param>
+            <param name="id"> Айди выпуска </param>
+            <param name="count"> Количество посуды </param>
+        </member>
+        <member name="T:Программная_инженерия_ЛР1.Glass">
+            <summary>
+            Бокал, унаследован от Посуды.
+            Может быть с ножкой или без.
+            </summary>
+        </member>
+        <member name="P:Программная_инженерия_ЛР1.Glass.HaveStem">
+            <summary>
+            С ножкой ли бокал?
+            </summary>
+        </member>
+        <member name="M:Программная_инженерия_ЛР1.Glass.#ctor(Программная_инженерия_ЛР1.DishCharacteristics,System.Int32,System.Int32)">
+            <summary>
+            Конструктор взятый с базового класса.
+            По умолчанию бокал с ножкой
+            </summary>
+            <param name="dishData"> Характеристики посуды </param>
+            <param name="id"> Айди выпуска </param>
+            <param name="count"> Количество посуды </param>
+        </member>
+        <member name="T:Программная_инженерия_ЛР1.Pan">
+            <summary>
+            Сковородка, унаследована от Посуды.
+            Может быть индукционной или нет.
+            </summary>
+        </member>
+        <member name="P:Программная_инженерия_ЛР1.Pan.IsInduction">
+            <summary>
+            Индукционная ли сковородка?
+            </summary>
+        </member>
+        <member name="M:Программная_инженерия_ЛР1.Pan.#ctor(Программная_инженерия_ЛР1.DishCharacteristics,System.Int32,System.Int32)">
+            <summary>
+            Конструктор взятый с базового класса.
+            По умолчанию не индукционная сковородка
+            </summary>
+            <param name="dishData"> Характеристики посуды </param>
+            <param name="id"> Айди выпуска </param>
+            <param name="count"> Количество посуды </param>
+        </member>
+        <member name="T:Программная_инженерия_ЛР1.Plate">
+            <summary>
+            Тарелка, унаследована от Посуды.
+            Может быть одноразовой или нет.
+            </summary>
+        </member>
+        <member name="P:Программная_инженерия_ЛР1.Plate.IsSingleUse">
+            <summary>
+            Одноразовая ли тарелка?
+            </summary>
+        </member>
+        <member name="M:Программная_инженерия_ЛР1.Plate.#ctor(Программная_инженерия_ЛР1.DishCharacteristics,System.Int32,System.Int32)">
+            <summary>
+            Конструктор взятый с базового класса.
+            По умолчанию тарелка не одноразовая
+            </summary>
+            <param name="dishData"> Характеристики посуды </param>
+            <param name="id"> Айди выпуска </param>
+            <param name="count"> Количество посуды </param> 
+        </member>
+        <member name="T:Программная_инженерия_ЛР1.Pot">
+            <summary>
+            Кастрюля, унаследована от Посуды.
+            Может быть антипригарным покрытием или нет.
+            </summary>
+        </member>
+        <member name="P:Программная_инженерия_ЛР1.Pot.HaveNonStickCoating">
+            <summary>
+            С антипригарным покрытием ли
+            </summary>
+        </member>
+        <member name="M:Программная_инженерия_ЛР1.Pot.#ctor(Программная_инженерия_ЛР1.DishCharacteristics,System.Int32,System.Int32)">
+            <summary>
+            Конструктор взятый с базового класса.
+            По умолчанию кастрюля с антиприкарным покрытием
+            </summary>
+            <param name="dishData"> Характеристики посуды </param>
+            <param name="id"> Айди выпуска </param>
+            <param name="count"> Количество посуды </param>
+        </member>
+        <member name="T:Программная_инженерия_ЛР1.RussianDish">
+            <summary>
+            Российская фабрика посуд. Чтобы произвести посуду
+            нужно указать количество и тип. Далее директор посуд
+            самостоятельно, через паттерн "строитель", в котором
+            реализован "мост", построит нужную нам модель.
+            </summary>
+        </member>
+        <member name="M:Программная_инженерия_ЛР1.RussianDish.#ctor">
+            <summary>
+            Конструктор, создающий директора
+            для строительства продукции
+            </summary>
+        </member>
+        <member name="M:Программная_инженерия_ЛР1.RussianDish.createCups(System.Int32,System.Int32)">
+            <summary>
+            Создаёт чашки
+            </summary>
+            <param name="count"> Количество штук </param>
+            <param name="typeOfCup"> Вид чашек </param>
+            <returns> Чашки </returns>
+        </member>
+        <member name="M:Программная_инженерия_ЛР1.RussianDish.createGlasses(System.Int32,System.Int32)">
+            <summary>
+            Создаёт бокалы
+            </summary>
+            <param name="count"> Количество штук </param>
+            <param name="typeOfGlass"> Вид бокалов </param>
+            <returns> Бокалы </returns>
+        </member>
+        <member name="M:Программная_инженерия_ЛР1.RussianDish.createPans(System.Int32,System.Int32)">
+            <summary>
+            Создаёт сковородки
+            </summary>
+            <param name="count"> Количество штук </param>
+            <param name="typeOfPan"> Вид сковородок </param>
+            <returns> Сковородки </returns>
+        </member>
+        <member name="M:Программная_инженерия_ЛР1.RussianDish.createPlates(System.Int32,System.Int32)">
+            <summary>
+            Создаёт тарелки
+            </summary>
+            <param name="count"> Количество штук </param>
+            <param name="typeOfPlates"> Вид тарелок </param>
+            <returns> Тарелки </returns>
+        </member>
+        <member name="M:Программная_инженерия_ЛР1.RussianDish.createPots(System.Int32,System.Int32)">
+            <summary>
+            Создаёт кастрюли
+            </summary>
+            <param name="count"> Количество штук </param>
+            <param name="typeOfPots"> Вид кастрюли </param>
+            <returns> Кастрюли </returns>
+        </member>
+        <member name="T:Программная_инженерия_ЛР1.DishCharacteristics">
+            <summary>
+            Структура посудных характеристик
+            </summary>
+        </member>
+    </members>
+</doc>
