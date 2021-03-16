@@ -107,25 +107,6 @@ namespace Программная_инженерия_ЛР1
             Console.WriteLine("Цена - " + thisGlass.GetDishCharacteristics().price);
         }
 
-
-        static void printGlass(Pan thisPan)
-        {
-            if (thisPan.IsInduction == true)
-            {
-                Console.WriteLine("Индукционная сковородка:");
-            }
-            else
-            {
-                Console.WriteLine("Неиндукционная сковородка:");
-            }
-            Console.WriteLine("В количестве - " + thisPan.GetDishCount());
-            Console.WriteLine("Айди выпуска - " + thisPan.GetDishId());
-            Console.WriteLine("Материал - " + thisPan.GetDishCharacteristics().material);
-            Console.WriteLine("Вместимость - " + thisPan.GetDishCharacteristics().capacity);
-            Console.WriteLine("Цвет - " + thisPan.GetDishCharacteristics().color);
-            Console.WriteLine("Цена - " + thisPan.GetDishCharacteristics().price);
-        }
-
         static void printPan(Pan thisPan)
         {
             if (thisPan.IsInduction == true)
